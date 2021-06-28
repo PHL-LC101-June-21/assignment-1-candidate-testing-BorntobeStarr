@@ -28,7 +28,7 @@ let correctAnswers = [
   "Trajectory", 
   "3"];
 let candidateAnswers= [];
-
+let points = [];
 
 
 function askForName () {
@@ -42,10 +42,14 @@ for (let i=0; i<question.length; i++) {
 candidateAnswer = input.question (question[i]);
   candidateAnswers.push(candidateAnswer);
   if (candidateAnswer.includes(correctAnswer[i])) {
+    points.push(20);
    console.log (`Great work ${candidateName}, ${candidateAnswer} is the correct answer!`)
+    console.log  ("\n");
   } 
   else {
-   console.log(`Thank you for your input ${candidateName}, the answer ${candidateAnswer} , you provided was incorrect.`);
+    points.push(0);
+   console.log(`Thank you for your input ${candidateName}, the answer ${candidateAnswer} , you provided was incorrect. The correct answer was ${correctAnswer[i]}`);
+    console.log  ("\n");
   } 
 }
 
@@ -55,12 +59,18 @@ candidateAnswer = input.question (question[i]);
 function gradeQuiz(candidateAnswers) {
 
   // TODO 1.2c: Let the candidate know if they have answered the question correctly or incorrectly // 
-console.log (candidateAnswers);
-  let grade;
-  
-
-  return grade;
+console.log (`Here is a copy of the answers you typed today ${candidateAnswers} and the points you recieved from each answer ${points}`);
+//console.log ();
+let grade = points[0] + points[1] + points[2] + points[3] + points[4];
+console.log (`>>> Overall Grade: ${grade}%<<<`)
+ console.log  ("\n");
+ if (grade >=80 ) {
+   console.log (">>> Status = Passed<<<");
+ } else {
+    console.log (">>> Status = failed<<<");
+ }
 }
+
 
 function runProgram() {
   askForName();
