@@ -21,8 +21,13 @@ let correctAnswer = [
   "3"];
 let candidateAnswer = "";
 let questions;
-let correctAnswers;
-let candidateAnswers= []
+let correctAnswers = [
+  "Sally Ride", 	
+  "true", 
+  "40", 
+  "Trajectory", 
+  "3"];
+let candidateAnswers= [];
 
 
 
@@ -34,7 +39,8 @@ candidateName = input.question ("Please enter candidates name: ")
 function askQuestion() {
   // TODO 1.2b: Ask candidate the question and assign the response as candidateAnswer //
 for (let i=0; i<question.length; i++) {
-candidateAnswer = input.question (question[i])
+candidateAnswer = input.question (question[i]);
+  candidateAnswers.push(candidateAnswer);
   if (candidateAnswer.includes(correctAnswer[i])) {
    console.log (`Great work ${candidateName}, ${candidateAnswer} is the correct answer!`)
   } 
@@ -49,7 +55,7 @@ candidateAnswer = input.question (question[i])
 function gradeQuiz(candidateAnswers) {
 
   // TODO 1.2c: Let the candidate know if they have answered the question correctly or incorrectly // 
-
+console.log (candidateAnswers);
   let grade;
   
 
