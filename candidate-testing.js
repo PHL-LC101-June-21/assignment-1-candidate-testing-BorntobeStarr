@@ -41,7 +41,7 @@ function askQuestion() {
 for (let i=0; i<question.length; i++) {
 candidateAnswer = input.question (question[i]);
   candidateAnswers.push(candidateAnswer);
-  if (candidateAnswer.includes(correctAnswer[i])) {
+  if (candidateAnswer.toUpperCase() === correctAnswer[i].toUpperCase()) {
     points.push(20);
    console.log (`Great work ${candidateName}, ${candidateAnswer} is the correct answer!`)
     console.log  ("\n");
